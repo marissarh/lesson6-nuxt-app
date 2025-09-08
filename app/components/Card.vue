@@ -43,4 +43,11 @@ const toggleExpand = () => {
 }
 .flag {
     border-radius: 8px;
+    width: 30%;
+    padding-top: 20px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    
+    
 }</style>
