@@ -2,7 +2,8 @@
     <div>
      <!--Include Header & Image Component to page-->
      <HeaderPage>
-        <h1 class="text-primary">View Countries in America API Data on Grid Page</h1>
+      
+       <h1 class="text-primary">View Countries in America API Data on Grid Page</h1>
     </HeaderPage>
    
     <div class="grid-container">
@@ -35,6 +36,20 @@ onMounted(async() => {
         console.error(error);
     }
 })
+
+    definePageMeta({
+    
+        meta: [
+          // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+          {
+            hid: 'description',
+            name: 'Nuxt-App',
+            content: 'Grid Page| Nuxt-App'
+          }
+        ]
+      }
+    )
+  
 </script>
 
 <style scoped>

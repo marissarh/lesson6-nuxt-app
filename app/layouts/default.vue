@@ -11,6 +11,6 @@ import FooterComponent from './FooterComponent.vue';
         <NavigationBar />
         
         <slot />
-        <FooterComponent/>
+        <FooterComponent />
     </div>
 </template>

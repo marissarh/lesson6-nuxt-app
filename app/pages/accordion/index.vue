@@ -2,13 +2,15 @@
    <div>
         <!--Add heading -->
    <HeaderPage>
-        <h1 class="text-primary">View Accordion List</h1>
+    <h1 class="text-primary">{{ title }}</h1>
+        <!--<h1 class="text-primary">View Accordion List</h1>-->
     </HeaderPage>
         
-
-    <div class="container">
-        <div class="row justify-content-center">
-    <main class="col-md-8 text-center">
+<ClientOnly>
+    <div class="container p-4">
+     
+        <div class="row justify-content-center p-4">
+    <main class="col-md-8 text-center p-4">
     
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
@@ -48,21 +50,41 @@
                   </div>
                 
               </div></div>
-        </main></div></div>
+        </main></div> </div>
+
+     </ClientOnly>
     </div>
    
 
 
-</template>
-<script>
 
+</template>
+<script >
 import HeaderPage from '@/layouts/HeaderPage.vue';
+
 export default {
-    name: 'Accordion',
+    name: 'AccordionPage',
     components:{
         HeaderPage
+    },
+    data() {
+      return {
+        title: 'View Accordion List'
+      }
+    },
+    head() {
+      return {
+        title: this.title,
+        meta: [
+          // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+          {
+            hid: 'description',
+            name: 'Nuxt-App',
+            content: 'Accordion List | Nuxt-App'
+          }
+        ]
+      }
     }
-    
+  }
 
-}
 </script>

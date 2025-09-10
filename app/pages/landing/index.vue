@@ -2,7 +2,8 @@
     <div>
         <!--Add heading -->
          <HeaderPage>
-        <h1 class="text-primary text-center">Responsive Website</h1>
+            <h1 class="text-primary">{{ title }}</h1>
+        <!--<h1 class="text-primary">Responsive Website</h1>-->
     </HeaderPage>
     
         <div class="mainContent p-4">
@@ -39,8 +40,26 @@ import HeaderPage from '@/layouts/HeaderPage.vue';
 export default{
     name:'LandingPage',
     components:
-        {HeaderPage}
+        {HeaderPage},
+    data() {
+      return {
+        title: 'Responsive Website'
+      }
+    },
+    head() {
+      return {
+        title: this.title,
+        meta: [
+          // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+          {
+            hid: 'description',
+            name: 'Nuxt-App',
+            content: 'View Landing Page | Nuxt-App'
+          }
+        ]
+      }
     }
+}
 </script>
 <style lang= "scss">
 </style>

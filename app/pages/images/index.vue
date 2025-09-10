@@ -1,7 +1,8 @@
 <template>
     <!--Include Header & Image Component to page-->
      <HeaderPage>
-        <h1 class="text-primary">View Images</h1>
+         <h1 class="text-primary">{{ title }}</h1>
+        <!--<h1 class="text-primary">View Images</h1>-->
     </HeaderPage>
    
     <!--Use Bootstrap to center images. Include defined props-->
@@ -32,6 +33,7 @@ import BeachPath from '@/assets/images/BeachPath.jpg';
 import LifeguardStation from '@/assets/images/LifeguardStation.jpg';
 import OceanRocks from '@/assets/images/OceanRocks.jpg';
 import HeaderPage from '@/layouts/HeaderPage.vue';
+
 export default{
     name: 'ImagesPage',
     components:{
@@ -42,8 +44,22 @@ export default{
         return {
             BeachPath,
             LifeguardStation,
-            OceanRocks
-        }
+            OceanRocks,
+            title: 'View Images'
+      }
+    },
+    head() {
+      return {
+        title: this.title,
+        meta: [
+          // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+          {
+            hid: 'description',
+            name: 'Nuxt-App',
+            content: 'View Images of beach | Nuxt-App'
+          }
+        ]
+      }
     }
-}
+  }
 </script>
